@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Getinfo" "Netinfo" "Journal" "Start Bitcoin Core" "Stop Bitcoin Core" "Restart Bitcoin Core" "Exit")
+options=("Getinfo" "Netinfo" "Journal" "Start Bitcoin Core" "Stop Bitcoin Core" "Restart Bitcoin Core" "Version" "Exit")
 
 # Function to display the menu
 show_menu() {
@@ -57,24 +57,28 @@ execute_choice() {
             sudo journalctl -f -u bitcoind
             ;;
         3)
-            if ask_confirmation; then            
+            if ask_confirmation; then
             echo ""
             sudo systemctl start bitcoind
             fi
             ;;
         4)
-            if ask_confirmation; then            
+            if ask_confirmation; then
             echo ""
             sudo systemctl stop bitcoind
             fi
             ;;
         5)
-            if ask_confirmation; then            
+            if ask_confirmation; then
             echo ""
             sudo systemctl restart bitcoind
             fi
-            ;;        
+            ;;
         6)
+            echo ""
+            bitcoind --version
+            ;;
+        7)
             echo ""
             exit 0
             ;;
