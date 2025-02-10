@@ -26,7 +26,6 @@ options=("Logs" "Start WireGuard" "Stop WireGuard" "Restart WireGuard" "< Back")
 # Function to display the menu
 show_menu() {
     clear
-    
     echo "***********************************"
     echo "           WIREGUARD VPN           "
     echo "***********************************"
@@ -46,7 +45,10 @@ execute_choice() {
     case $selected in
         0)
             echo ""
-            journalctl -fu wg-quick@wg0.service
+            journalctl -fu wg-quick@wg0.service | sed '1s/^/\n/' &
+            pid=$!
+            read -p "Press Enter to return to menu..."
+            kill $pid
             ;;
         1)
             if ask_confirmation; then

@@ -26,7 +26,6 @@ options=("Logs" "Start Fulcrum" "Stop Fulcrum" "Restart Fulcrum" "< Back")
 # Function to display the menu
 show_menu() {
     clear
-    
     echo "***********************************"
     echo "              FULCRUM              "
     echo "***********************************"
@@ -46,7 +45,7 @@ execute_choice() {
     case $selected in
         0)
             echo ""
-            journalctl -fu fulcrum &
+            journalctl -fu fulcrum | sed '1s/^/\n/' &
             pid=$!
             read -p "Press Enter to return to menu..."
             kill $pid
@@ -54,13 +53,13 @@ execute_choice() {
         1)
             if ask_confirmation; then
             echo ""
-            sudo systemctl start fulcrum 
+            sudo systemctl start fulcrum
             fi
             ;;
         2)
             if ask_confirmation; then
             echo ""
-            sudo systemctl stop fulcrum 
+            sudo systemctl stop fulcrum
             fi
             ;;
         3)

@@ -26,7 +26,6 @@ options=("Getinfo" "Logs" "Start LND" "Stop LND" "Restart LND" "< Back")
 # Function to display the menu
 show_menu() {
     clear
-    
     echo "***********************************"
     echo "                LND                "
     echo "***********************************"
@@ -50,7 +49,10 @@ execute_choice() {
             ;;
         1)
             echo ""
-            journalctl -fu lnd 
+            journalctl -fu lnd | sed '1s/^/\n/' &
+            pid=$!
+            read -p "Press Enter to return to menu..."
+            kill $pid
             ;;
         2)
             if ask_confirmation; then

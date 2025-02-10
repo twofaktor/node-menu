@@ -26,7 +26,6 @@ options=("Getinfo" "Netinfo" "Logs" "Start Bitcoin Core" "Stop Bitcoin Core" "Re
 # Function to display the menu
 show_menu() {
     clear
-    
     echo "***********************************"
     echo "           BITCOIN CORE            "
     echo "***********************************"
@@ -54,7 +53,10 @@ execute_choice() {
             ;;
         2)
             echo ""
-            journalctl -fu bitcoind
+            journalctl -fu bitcoind | sed '1s/^/\n/' &
+            pid=$!
+            read -p "Press Enter to return to menu..."
+            kill $pid
             ;;
         3)
             if ask_confirmation; then

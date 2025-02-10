@@ -6,7 +6,6 @@ options=("Bitcoin Core" "LND" "Fulcrum" "Blockchain Explorer" "ThunderHub" "Wire
 # Function to display the menu
 show_menu() {
     clear
-    
     echo "***********************************"
     echo "   WELCOME TO MINIBOLT NODE MENU   "
     echo "***********************************"

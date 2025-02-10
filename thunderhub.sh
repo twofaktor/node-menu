@@ -26,7 +26,6 @@ options=("Logs" "Start ThunderHub" "Stop ThunderHub" "Restart ThunderHub" "< Bac
 # Function to display the menu
 show_menu() {
     clear
-    
     echo "***********************************"
     echo "             THUNDERHUB            "
     echo "***********************************"
@@ -46,18 +45,21 @@ execute_choice() {
     case $selected in
         0)
             echo ""
-            journalctl -fu thunderhub
+            journalctl -fu thunderhub | sed '1s/^/\n/' &
+            pid=$!
+            read -p "Press Enter to return to menu..."
+            kill $pid
             ;;
         1)
             if ask_confirmation; then
             echo ""
-            sudo systemctl start thunderhub 
+            sudo systemctl start thunderhub
             fi
             ;;
         2)
             if ask_confirmation; then
             echo ""
-            sudo systemctl stop thunderhub 
+            sudo systemctl stop thunderhub
             fi
             ;;
         3)

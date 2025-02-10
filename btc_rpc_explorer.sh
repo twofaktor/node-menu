@@ -26,7 +26,6 @@ options=("Logs" "Start BTC RPC Explorer" "Stop BTC RPC Explorer" "Restart BTC RP
 # Function to display the menu
 show_menu() {
     clear
-    
     echo "***********************************"
     echo "          BLOCKCHAIN EXPLORER         "
     echo "***********************************"
@@ -46,18 +45,21 @@ execute_choice() {
     case $selected in
         0)
             echo ""
-            journalctl -fu btcrpcexplorer
+            journalctl -fu btcrpcexplorer | sed '1s/^/\n/' &
+            pid=$!
+            read -p "Press Enter to return to menu..."
+            kill $pid
             ;;
         1)
             if ask_confirmation; then
             echo ""
-            sudo systemctl start btcrpcexplorer 
+            sudo systemctl start btcrpcexplorer
             fi
             ;;
         2)
             if ask_confirmation; then
             echo ""
-            sudo systemctl stop btcrpcexplorer 
+            sudo systemctl stop btcrpcexplorer
             fi
             ;;
         3)
