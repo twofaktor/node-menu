@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Logs" "Start Fulcrum" "Stop Fulcrum" "Restart Fulcrum" "Exit")
+options=("Logs" "Start Fulcrum" "Stop Fulcrum" "Restart Fulcrum" "< Back")
 
 # Function to display the menu
 show_menu() {

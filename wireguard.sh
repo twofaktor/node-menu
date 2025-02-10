@@ -21,14 +21,14 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Logs" "Start WireGuard" "Stop WireGuard" "Restart WireGuard" "Exit")
+options=("Logs" "Start WireGuard" "Stop WireGuard" "Restart WireGuard" "< Back")
 
 # Function to display the menu
 show_menu() {
     clear
     
     echo "***********************************"
-    echo "             WIREGUARD             "
+    echo "           WIREGUARD VPN           "
     echo "***********************************"
     echo
 

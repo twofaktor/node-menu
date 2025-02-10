@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Getinfo" "Logs" "Start LND" "Stop LND" "Restart LND" "Exit")
+options=("Getinfo" "Logs" "Start LND" "Stop LND" "Restart LND" "< Back")
 
 # Function to display the menu
 show_menu() {

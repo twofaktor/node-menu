@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Logs" "Start ThunderHub" "Stop ThunderHub" "Restart ThunderHub" "Exit")
+options=("Logs" "Start ThunderHub" "Stop ThunderHub" "Restart ThunderHub" "< Back")
 
 # Function to display the menu
 show_menu() {

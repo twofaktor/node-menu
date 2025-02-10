@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Logs" "Start BTC RPC Explorer" "Stop BTC RPC Explorer" "Restart BTC RPC Explorer" "Exit")
+options=("Logs" "Start BTC RPC Explorer" "Stop BTC RPC Explorer" "Restart BTC RPC Explorer" "< Back")
 
 # Function to display the menu
 show_menu() {

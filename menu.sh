@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Menu options
-options=("Bitcoin Core" "LND" "Fulcrum" "Blockchain Explorer" "Thunderhub" "Wireguard - VPN Tunnel" "Exit")
+options=("Bitcoin Core" "LND" "Fulcrum" "Blockchain Explorer" "ThunderHub" "Wireguard VPN" "< Back")
 
 # Function to display the menu
 show_menu() {
     clear
     
     echo "***********************************"
-    echo "    WELCOME TO MINIBOLT NODE MENU    "
+    echo "   WELCOME TO MINIBOLT NODE MENU   "
     echo "***********************************"
     echo
 

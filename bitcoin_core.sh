@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Getinfo" "Netinfo" "Logs" "Start Bitcoin Core" "Stop Bitcoin Core" "Restart Bitcoin Core" "Version" "Exit")
+options=("Getinfo" "Netinfo" "Logs" "Start Bitcoin Core" "Stop Bitcoin Core" "Restart Bitcoin Core" "Version" "< Back")
 
 # Function to display the menu
 show_menu() {
