@@ -46,8 +46,11 @@ execute_choice() {
     case $selected in
         0)
             echo ""
-            journalctl -fu fulcrum
-            ;;
+            journalctl -fu fulcrum &
+            pid=$!
+            read -p "Press Enter to return to menu..."
+            kill $pid
+            ;;    
         1)
             if ask_confirmation; then
             echo ""
