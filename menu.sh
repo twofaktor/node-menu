@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Menu options
-options=("Bitcoin Core" "LND" "Fulcrum" "Bitcoin Explorer" "Thunderhub" "Wireguard - VPN Tunnel" "Exit")
+options=("Bitcoin Core" "LND" "Fulcrum" "Blockchain Explorer" "Thunderhub" "Wireguard - VPN Tunnel" "Exit")
 
 # Function to display the menu
 show_menu() {
