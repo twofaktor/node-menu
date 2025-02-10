@@ -1,18 +1,27 @@
-![node_menu](https://github.com/user-attachments/assets/7a2240d6-86f1-4964-9486-ee9fb2cbc849)
+## Simple scripts for creating a menu for easier operation of the MiniBolt in Linux terminal.
 
-Simple scripts for creating a menu for easier operation of the node in Linux terminal.
-Open each file which contains menu script for each application.
+* Go to the temprary folder
 
-EXAMPLE:
+```sh
+cd /tmp
+```
 
-nano menu.sh
+* Clone the GitHub repository and enter to it
 
-copy and paste script from the file menu into menu.sh, save and exit.
+```sh
+git clone https://github.com/twofaktor/node-menu.git && cd node-menu
+```
 
-Make the script executable:
+* Assign execution permissions for all sub-scripts inside of the folder
 
-chmod +x menu.sh
+```sh
+chmod +x /tmp/node-menu/*
+```
 
-Run the menu:
+* Exec the main menu
 
+```sh
 ./menu.sh
+```
+
+Navigate through the menu by pressing the UP, DOWN, and ENTER keys.
