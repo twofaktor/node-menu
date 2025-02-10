@@ -1,6 +1,6 @@
-## Simple scripts for creating a menu for easier operation of the MiniBolt in Linux terminal.
+## Simple scripts for creating a menu for easier operation of the MiniBolt in the Linux terminal.
 
-* Go to the temprary folder
+* Go to the temporary folder
 
 ```sh
 cd /tmp
