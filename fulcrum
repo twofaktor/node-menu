@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Journal" "Start Fulcrum" "Stop Fulcrum" "Restart Fulcrum" "Exit")
+options=("Logs" "Start Fulcrum" "Stop Fulcrum" "Restart Fulcrum" "Exit")
 
 # Function to display the menu
 show_menu() {
@@ -46,7 +46,7 @@ execute_choice() {
     case $selected in
         0)
             echo ""
-            sudo journalctl -f -u fulcrum
+            journalctl -fu fulcrum
             ;;
         1)
             if ask_confirmation; then

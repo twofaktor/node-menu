@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Getinfo" "Journal" "Start LND" "Stop LND" "Restart LND" "Exit")
+options=("Getinfo" "Logs" "Start LND" "Stop LND" "Restart LND" "Exit")
 
 # Function to display the menu
 show_menu() {
@@ -50,7 +50,7 @@ execute_choice() {
             ;;
         1)
             echo ""
-            sudo journalctl -f -u lnd 
+            journalctl -fu lnd 
             ;;
         2)
             if ask_confirmation; then

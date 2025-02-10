@@ -21,14 +21,14 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Journal" "Start BTC RPC Explorer" "Stop BTC RPC Explorer" "Restart BTC RPC Explorer" "Exit")
+options=("Logs" "Start BTC RPC Explorer" "Stop BTC RPC Explorer" "Restart BTC RPC Explorer" "Exit")
 
 # Function to display the menu
 show_menu() {
     clear
     
     echo "***********************************"
-    echo "          BITCOIN EXPLORER         "
+    echo "          BLOCKCHAIN EXPLORER         "
     echo "***********************************"
     echo
 
@@ -46,7 +46,7 @@ execute_choice() {
     case $selected in
         0)
             echo ""
-            sudo journalctl -f -u btcrpcexplorer
+            journalctl -fu btcrpcexplorer
             ;;
         1)
             if ask_confirmation; then

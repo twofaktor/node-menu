@@ -8,7 +8,7 @@ show_menu() {
     clear
     
     echo "***********************************"
-    echo "    WELCOME TO YOUR NODE'S MENU    "
+    echo "    WELCOME TO MINIBOLT NODE MENU    "
     echo "***********************************"
     echo
 

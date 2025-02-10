@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Journal" "Start ThunderHub" "Stop ThunderHub" "Restart ThunderHub" "Exit")
+options=("Logs" "Start ThunderHub" "Stop ThunderHub" "Restart ThunderHub" "Exit")
 
 # Function to display the menu
 show_menu() {
@@ -46,7 +46,7 @@ execute_choice() {
     case $selected in
         0)
             echo ""
-            sudo journalctl -f -u thunderhub
+            journalctl -fu thunderhub
             ;;
         1)
             if ask_confirmation; then

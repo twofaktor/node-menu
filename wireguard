@@ -21,7 +21,7 @@ ask_confirmation() {
 }
 
 # Menu options
-options=("Journal" "Start WireGuard" "Stop WireGuard" "Restart WireGuard" "Exit")
+options=("Logs" "Start WireGuard" "Stop WireGuard" "Restart WireGuard" "Exit")
 
 # Function to display the menu
 show_menu() {
@@ -46,7 +46,7 @@ execute_choice() {
     case $selected in
         0)
             echo ""
-            sudo journalctl -f -u wg-quick@wg0.service
+            journalctl -fu wg-quick@wg0.service
             ;;
         1)
             if ask_confirmation; then
